@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def index
+  def home
+    @post = Post.order("created_at").last
   end
 end
