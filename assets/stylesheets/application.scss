@@ -15,14 +15,21 @@
  */
  @import "bootstrap";
 
- html {
+h2, p, h6 {
+     font-family:BioRhyme;
 
  }
+
+
 h1 {
-       white-space: nowrap;
+  white-space: nowrap;
 }
 
-  body {
+body {
+  background-color: #DAA520;
+}
+
+  .window {
     background-color: #ffffcc;
   }
 
@@ -67,35 +74,8 @@ a:hover {
   width: 100%;
 }
 
-img {
-  height: 192px;
-  width: 240px;
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
 
-  border-radius: 20px;
-
-}
-
-.side {
-
-  margin-left: 800px;
-  border-right: black;
-  width: 700px;
-}
 
 p {
   word-wrap:break-word;
-}
-
-
-
-
-.text-describe {
-  position: relative;
-  width: 300px;
-  border-right: black;
 }

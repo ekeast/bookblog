@@ -9,12 +9,7 @@
     <title>Bookblog</title>
     <%= csrf_meta_tags %>
     <head>
-      <div class="thecontainer">
-        <div class="background"></div>
-          <div class="text">
-            <h3 style="font-family:BioRhyme; font-size: 7em;">Unnecessary Book Blog</h3>
-          </div>
-      </div>
+
     </head>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,30 +17,40 @@
   </head>
 
   <body>
-    <div class="linkz">
-      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-         <div class="navbar-brand"><a>Ted's Unnecessary Book Blog</a></div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto navbar-right">
-            <li class="nav-link active"><a>Purity</a></li>
-            <li class="nav-link active"><a>Bel Canto</a></li>
-            <li class="nav-link active toggle-right"><a>The Yiddish Policeman's Union</a></li>
-            <li class="nav-link active toggle-right"><a>More</a></li>
-          </ul>
-        <div>
-      </nav>
-    </div>
+    <div class="window" style="width:1080px; margin:0 auto; padding-top:0px">
+      <div class="thecontainer">
+        <div class="background"></div>
+          <div class="text">
+            <h3 style="font-family:BioRhyme; font-size: 7em;">Booksack Blog</h3>
+          </div>
+      </div>
+      <div class="linkz">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+           <div class="navbar-brand" style="padding-right:20px"><a>About</a></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-link active"><a>The Last Book I ready</a></li>
+              <li class="nav-link active"><a>The One Before That</a></li>
+              <li class="nav-link active toggle-right"><a>And the One Before That</a></li>
+              <div id="user-widget">
+                <% if current_user %>
+                <li><%= current_user.name %></li>
+                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+                <% else %>
+                  <%= link_to 'Login With Facebook', '/auth/facebook' %>
+                <% end %>
+              </div>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+              <li class="nav-link active toggle-right"><a>Login to Comment</a></li>
+            </ul>
+          <div>
+        </nav>
+      </div>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 
-  <h1>Latest Post</h1>
-  <div class="side container row">
-    <img src="/assets/face.jpg">
-    <div class="text-describe"?
-      <p style="font-family:BioRhyme">Here it is, folks--it's my face. I made this page to motivated myself to read more and work on my web development skills. My goal is to fill up the entire internet with as much of my content as possible so that it runs out of space and we don't have to use it anymore.</p>
-    </div>
-  </div>
-  <div class="post container-fluid">
-  </div>
+
 </html>
