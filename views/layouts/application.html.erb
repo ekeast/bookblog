@@ -34,15 +34,15 @@
               <li class="nav-link active toggle-right"><a>And the One Before That</a></li>
             </ul>
             <% if current_user %>
-            <ul class="navbar-nav navbar-right">
+            <ul class="navbar-nav mr-auto navbar-right login">
               <!-- <li class="nav-link active toggle-right avatar"><%= image_tag current_user.image_url, alt: current_user.name %></li> -->
               <li class="nav-link active toggle-right">Welcome, <%= current_user.name %></li>
 
-              <li class="nav-link active toggle-right"><a><%= link_to 'Log Out', logout_path, method: :delete %></li>
+              <li class="nav-link active toggle-right login"><a><%= link_to 'Log Out', logout_path, method: :delete %></li>
             </ul>
             <% else %>
-            <ul class="navbar-nav navbar-right">
-                <li class="nav-link active toggle-right"><%= link_to 'Login to Comment', '/auth/facebook' %></li>
+            <ul class="navbar-nav navbar-right logout">
+                <li class="nav-link active toggle-right logout"><a><%= link_to 'Login to Comment', '/auth/facebook' %></a></li>
             </ul
             <% end %>
           <div>

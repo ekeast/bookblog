@@ -114,3 +114,29 @@ nav li {
    display: inline-block;
    text-align:center;
 }
+
+.login a {
+  color: #ffffcc !important;
+  font-family:BioRhyme;
+  display: inline-block;
+  text-align:center;
+
+}
+
+.logout a {
+  color: #ffffcc !important;
+  font-family:BioRhyme;
+  display: inline-block;
+  text-align:center;
+}
+
+.login a:hover {
+  color: #B67839 !important;
+  text-decoration: none;
+
+}
+
+.logout a:hover {
+  color: #B67839 !important;
+  text-decoration: none;
+}
