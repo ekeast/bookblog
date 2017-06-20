@@ -40,6 +40,8 @@ body {
 .nav-link {
   color: #ffffcc !important;
   font-family:BioRhyme;
+  display: inline-block;
+  text-align:center;
 }
 
 a:hover {
@@ -78,4 +80,37 @@ a:hover {
 
 p {
   word-wrap:break-word;
+}
+
+.side-image {
+  height: 240px;
+  width: 300px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  border-radius: 20px;
+
+}
+
+.avatar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+nav {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 1080;
+  height: 56px;
+  display: inline-block;
+  text-align: center;
+}
+
+nav li {
+   display: inline-block;
+   text-align:center;
 }

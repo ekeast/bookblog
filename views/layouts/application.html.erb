@@ -32,18 +32,19 @@
               <li class="nav-link active"><a>The Last Book I ready</a></li>
               <li class="nav-link active"><a>The One Before That</a></li>
               <li class="nav-link active toggle-right"><a>And the One Before That</a></li>
-              <div id="user-widget">
-                <% if current_user %>
-                <li><%= current_user.name %></li>
-                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-                <% else %>
-                  <%= link_to 'Login With Facebook', '/auth/facebook' %>
-                <% end %>
-              </div>
             </ul>
+            <% if current_user %>
             <ul class="navbar-nav navbar-right">
-              <li class="nav-link active toggle-right"><a>Login to Comment</a></li>
+              <!-- <li class="nav-link active toggle-right avatar"><%= image_tag current_user.image_url, alt: current_user.name %></li> -->
+              <li class="nav-link active toggle-right">Welcome, <%= current_user.name %></li>
+
+              <li class="nav-link active toggle-right"><a><%= link_to 'Log Out', logout_path, method: :delete %></li>
             </ul>
+            <% else %>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-link active toggle-right"><%= link_to 'Login to Comment', '/auth/facebook' %></li>
+            </ul
+            <% end %>
           <div>
         </nav>
       </div>
