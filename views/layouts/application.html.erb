@@ -36,7 +36,7 @@
             <% if current_user %>
             <ul class="navbar-nav mr-auto navbar-right login">
               <!-- <li class="nav-link active toggle-right avatar"><%= image_tag current_user.image_url, alt: current_user.name %></li> -->
-              <li class="nav-link active toggle-right">Welcome, <%= current_user.name %></li>
+              <li class="nav-link active toggle-right">Welcome, <%= current_user.name.split(" ")[0] %>!</li>
 
               <li class="nav-link active toggle-right login"><a><%= link_to 'Log Out', logout_path, method: :delete %></li>
             </ul>
