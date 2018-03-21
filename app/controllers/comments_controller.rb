@@ -7,11 +7,29 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new(comment_params)
+    @new_comment = Comment.new
 
     if @comment.save
-      redirect_to :back
+      flash[:notice] = "Comment saved successfully."
     else
-      redirect_to :back, notice: "Your comment wasn't posted!"
+      flash[:notice] = "Your comment wasn't posted!"
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+
+
+  def destroy
+    @comment = @commentable.comments.find(params[:id])
+
+    if @comment.destroy
+      flash[:notice] = "Comment was deleted successfully."
+    else
+      flash[:notice] = "Comment couldn't be deleted. Try again."
     end
   end
 

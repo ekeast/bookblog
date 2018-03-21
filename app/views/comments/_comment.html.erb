@@ -1,14 +1,19 @@
-<li>
+<li id='comment-<%=comment.id%>'>
+
   <%= comment.body %> -
+  <%= link_to "Delete", [comment.commentable, comment], method: :delete, remote: true %>
   <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
 
-  <%= form_for [comment, Comment.new] do |f| %>
+  <div class="new-comment">
+  <%= form_for [comment, Comment.new], remote: true do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>
-      <% end %>
-
+  <% end %>
+  </div>
   <ul>
-      <%= render partial: 'comments/comment', collection: comment.comments %>
+      <div class='shit'>
+        <%= render partial: 'comments/comment', collection: comment.comments %>
+      </div>
   </ul>
 
 </li>
